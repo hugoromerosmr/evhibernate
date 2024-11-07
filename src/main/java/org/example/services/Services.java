@@ -39,13 +39,13 @@ public class Services {
     public void saveOpinion(Opinion opinion) {
         sessionFactory.inTransaction((session) -> session.persist(opinion));
     }
-    public List<Pelicula> findByPuntuacion(Long puntuacion){
+    /*public List<Pelicula> findByPuntuacion(Long puntuacion){
         Session session = sessionFactory.openSession();
-        Query<Opinion> query = session.createQuery("from Pelicula ")
+        Query<Opinion> query = session.createQuery("FROM Pelicula WHERE ID=:pu", Pelicula.class);
         query.setParameter("puntuacion", puntuacion);
         query.list().forEach(System.out::println);
         return query.list();
-    }
+    }*/
 
 
 
